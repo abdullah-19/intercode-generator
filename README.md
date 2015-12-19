@@ -1,8 +1,7 @@
 # intercode-generator
 
-## Useage
+## Usage EquationTree
 ``` c++
-
 int _tmain()
 {
 	_wsetlocale(LC_ALL, L"korean");
@@ -66,4 +65,40 @@ $t7_=$t1_*$t6_
 $t8_=$t5_+$t7_
 
 ...
+```
+
+## Usage variable_method
+``` c++
+int main()
+{
+using namespace std;
+
+    parse_variable pv;
+    std::string parsinglot;
+    for (std::string str : pv.parse_replacement2("p[a+b[a-b]+c[d-z[k]+a]]+k(a)", parsinglot))
+        cout << str << endl;
+    cout << endl;
+    cout << parsinglot << endl;
+	
+    return 0;
+}
+```
+```
+@t0_=a-b
+@r0_=b
+@r1_=@r0_[@t0_]
+@t0_=k
+@r0_=z
+@r1_=@r0_[@t0_]
+@t1_=d-@r1_+a
+@r2_=c
+@r3_=@r2_[@t1_]
+@t0_=a+@r1_+@r3_
+@r0_=p
+@r1_=@r0_[@t0_]
+@t1_=a
+@r2_=k
+@r3_=@r2_(@t1_)
+
+@r1_+@r3_
 ```
