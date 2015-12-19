@@ -9,7 +9,7 @@ File name:
 
 Purpose:
 
-	RollRat Library
+   RollRat Library
 
 Author:
 
@@ -597,7 +597,7 @@ namespace Utility {
 				   / \
 				  1   2  <= _Last
 				     / \
-					+   3
+				    +   3
 
 				After Processing:
 
@@ -605,7 +605,7 @@ namespace Utility {
 				   / \
 				  1   +
 				     / \
-					2   3
+				    2   3
 			*/
 			if ((*this->_Last).is_left())
 				if ((this->_Last->_Left)->is_data() &&
